@@ -1,6 +1,8 @@
+using HobbyTracker.Gateway.Configurations;
+using HobbyTracker.Core;
 using HobbyTracker.Dal;
 
-namespace HobbyTracker.Configurations;
+namespace HobbyTracker.Gateway.Configurations;
 
 public static class AutoMapperConfigurations
 {
@@ -8,7 +10,9 @@ public static class AutoMapperConfigurations
     {
         services.AddAutoMapper(mc =>
         {
+            mc.ConfigureCoreProfiles();
             mc.ConfigureDalProfiles();
+            mc.ConfigureGatewayProfiles();
         });
     }
 }
